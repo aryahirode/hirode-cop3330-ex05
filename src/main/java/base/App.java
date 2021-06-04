@@ -10,7 +10,9 @@ public class App {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
         App myApp = new App();
-        myApp.calculations(myApp.num1Prompt(), myApp.num2Prompt());
+        int num1 = myApp.num1Prompt();
+        int num2 = myApp.num2Prompt();
+        myApp.output(num1, num2);
     }
 
     private int num1Prompt() {
@@ -27,7 +29,7 @@ public class App {
         return new int[]{num1 + num2, num1 - num2, num1 * num2, num1 / num2};
     }
 
-    private void output() {
-
+    private void output(int num1, int num2) {
+        System.out.printf("%d + %d = %d\n%d - %d = %d\n%d * %d = %d\n%d / %d = %d\n", num1, num2, calculations(num1, num2)[0], num1, num2, calculations(num1, num2)[1], num1, num2, calculations(num1, num2)[2], num1, num2, calculations(num1, num2)[3]);
     }
 }
